@@ -25,14 +25,4 @@ export class SimbaTabs extends ThemeMixin(LionTabs) {
   static get styles() {
     return [...super.styles, styles];
   }
-
-  render() {
-    return html`
-      <div class="button-content" id="${this._buttonId}">
-        <slot name="prefix"></slot>
-        <slot></slot>
-        <slot name="suffix"></slot>
-      </div>
-    `;
-  }
 }
