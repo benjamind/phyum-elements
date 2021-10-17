@@ -16,13 +16,17 @@ loadDefaultFeedbackMessages();
 
 ```js preview-story
 export const input = () => html`
-  <simba-radio-group 
+  <simba-radio-group
     name="lion_favorite"
     label="Favorite lion"
     help-text="Don't pick Scar >:("
   >
     <simba-radio label="Simba" .choiceValue=${'simba'}></simba-radio>
-    <simba-radio label="Sarafina" .choiceValue=${'sarafina'} checked></simba-radio>
+    <simba-radio
+      label="Sarafina"
+      .choiceValue=${'sarafina'}
+      checked
+    ></simba-radio>
     <simba-radio label="Mufasa" .choiceValue=${'mufasa'}></simba-radio>
     <simba-radio label="Scar" disabled .choiceValue=${'scar'}></simba-radio>
     <simba-radio label="Nala" .choiceValue=${'nala'}></simba-radio>
@@ -36,10 +40,10 @@ You can also prefill and disable the stepper in case you don't want your user to
 
 ```js preview-story
 export const inputDisabled = () => html`
-  <simba-radio-group 
+  <simba-radio-group
     .validators=${[new Required()]}
     label="Worst lion"
-    name="lion_worst" 
+    name="lion_worst"
     disabled
   >
     <simba-radio label="Simba" .choiceValue=${'simba'}></simba-radio>
@@ -47,6 +51,35 @@ export const inputDisabled = () => html`
     <simba-radio label="Mufasa" .choiceValue=${'mufasa'}></simba-radio>
     <simba-radio label="Scar" checked .choiceValue=${'scar'}></simba-radio>
     <simba-radio label="Nala" .choiceValue=${'nala'}></simba-radio>
+  </simba-radio-group>
+`;
+```
+
+## Button Style
+
+```js preview-story
+export const inputButton = () => html`
+  <simba-radio-group
+    name="lion_favorite"
+    label="Favorite lion"
+    help-text="Don't pick Scar >:("
+    button
+  >
+    <simba-radio button label="Simba" .choiceValue=${'simba'}></simba-radio
+    ><simba-radio
+      button
+      label="Sarafina"
+      .choiceValue=${'sarafina'}
+      checked
+    ></simba-radio>
+    <simba-radio button label="Mufasa" .choiceValue=${'mufasa'}></simba-radio>
+    <simba-radio
+      button
+      label="Scar"
+      disabled
+      .choiceValue=${'scar'}
+    ></simba-radio>
+    <simba-radio button label="Nala" .choiceValue=${'nala'}></simba-radio>
   </simba-radio-group>
 `;
 ```

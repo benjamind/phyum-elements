@@ -9,6 +9,16 @@ export class SimbaRadio extends ThemeMixin(LionRadio) {
     return [...super.styles, inputStyles, choiceBoxStyles, styles];
   }
 
+  static get properties() {
+    return {
+      ...super.properties,
+      button: {
+        type: Boolean,
+        reflect: true,
+      },
+    };
+  }
+
   render() {
     return html`
       <slot name="input"></slot>
